@@ -71,8 +71,3 @@ class BookCreate(LoginRequiredMixin, View):
             }
             return render(request, self.template_name, cotext)
 
-#-4---
-
-# this is MMMM branch................
-
-#---__________________tt__________________________________
