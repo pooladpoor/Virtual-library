@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Borrowed Books{% endblock %}
+
+{% block content %}
+<h1>Borrowed Books</h1>
+    {% if all %}
+        <a href="{% url "borrows:my_borrow_list" %}" class="btn btn-secondary">only me</a>
+    {% else %}
+        <a href="{% url "borrows:borrow_list" %}" class="btn btn-secondary">all</a>
+    {% endif %}
+<div class="list-group">
+    {% for borrow in borrows %}
+    <a href="{% url 'home:book_detail' borrow.book.id %}" class="list-group-item list-group-item-action">
+        <h5 class="mb-1">{{ borrow.book.name }}</h5>
+        <p class="mb-1">Borrowed by {{ borrow.Borrower.full_name }} until {{ borrow.e_deadline }}</p>
+        <small>Borrowed on {{ borrow.s_deadline }}</small>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}

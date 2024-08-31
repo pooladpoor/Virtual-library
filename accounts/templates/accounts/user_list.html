@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Users{% endblock %}
+
+{% block content %}
+<h1>Users</h1>
+<div class="list-group">
+    {% for user in users %}
+    <a href="{% url 'accounts:user_detail' user.id %}" class="list-group-item list-group-item-action">
+        <h5 class="mb-1">{{ user.full_name }}</h5>
+        <p class="mb-1">{{ user.phone }}</p>
+        <small>Member since {{ user.date_joined }}</small>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}User{% endblock %}
+
+{% block content %}
+<h1>{{ user.full_name }}</h1>
+<p><strong>Phone:</strong> {{ user.phone }}</p>
+<p><strong>Adress:</strong> {{ user.adress }}</p>
+<p><strong>Last login:</strong> {{ user.last_login }}</p>
+
+{#<h3>Borrowed Books</h3>#}
+{#<ul class="list-group">#}
+{#    {% for borrow in user.borrows %}#}
+{#    <li class="list-group-item">#}
+{#        <strong>{{ borrow.book.name }}</strong> (end_deadline: {{ borrow.e_deadline }})#}
+{#    </li>#}
+{#    {% endfor %}#}
+{#</ul>#}
+{% endblock %}
