@@ -70,5 +70,3 @@ class BookCreate(LoginRequiredMixin, View):
                 "Button_text": "submit",
             }
             return render(request, self.template_name, cotext)
-
-# this is a origen test ________________test_________________
